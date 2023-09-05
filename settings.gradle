@@ -1,0 +1,32 @@
+pluginManagement {
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        maven { url './repo' }
+        google()
+        mavenLocal()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        maven { url './repo' }
+        mavenLocal()
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.name = "InspectService"
+include ':app'
+include ':injectservice:injectservice_plugin'
+include ':injectservice:injectservice_runtime'
+include ':modules:module1'
+include ':modules:module2'
+include ':base:lib_interface'

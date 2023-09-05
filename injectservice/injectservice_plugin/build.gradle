@@ -1,0 +1,44 @@
+plugins {
+    id 'java-library'
+    id 'org.jetbrains.kotlin.jvm'
+    id 'java-gradle-plugin'
+    id 'com.gradle.plugin-publish' version '1.1.0'
+}
+
+dependencies {
+    implementation(gradleApi())
+    implementation(localGroovy())
+    implementation("com.android.tools.build:gradle:4.1.0")
+}
+
+gradlePlugin {
+    plugins {
+        InjectServicePlugin {
+            id = "com.aidaole.injectservice"
+            implementationClass = "com.aidaole.injectservice.plugin.InjectServicePlugin"
+        }
+    }
+}
+
+publishing {
+    repositories {
+        maven {
+            allowInsecureProtocol = true
+            url = "../../repo"
+        }
+    }
+    publications {
+        maven(MavenPublication) {
+            group = 'com.aidaole.plugin'
+            version = '1.0-SNAPSHOT'
+            artifactId = "injectservice"
+
+            from components.java
+        }
+    }
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
