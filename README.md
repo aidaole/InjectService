@@ -1,3 +1,5 @@
+[![](https://jitpack.io/v/aidaole/InjectService.svg)](https://jitpack.io/#aidaole/InjectService)
+
 ## 1. 介绍项目结构
 
 ```
@@ -37,6 +39,8 @@ app
 
 ### 2.2 引用插件
 
+#### 2.2.1 本地发布
+
 `settings.gradle` 添加
 
 ```gradle
@@ -61,6 +65,33 @@ buildscript {
 app 的 `build.gradle` 应用插件
 
 ```gradle
+plugins {
+    // ...
+    id 'com.aidaole.injectservice'
+}
+```
+
+#### 2.2.2 依赖jitpack版本
+
+添加jitpack依赖
+
+```groovy
+maven { url 'https://jitpack.io' }
+```
+
+project的build.gralde中依赖插件版本
+
+```groovy
+buildscript {
+    dependencies {
+        classpath "com.github.aidaole:InjectService:0.0.4"
+    }
+}
+```
+
+app的build.gradle中应用插件
+
+```groovy
 plugins {
     // ...
     id 'com.aidaole.injectservice'
