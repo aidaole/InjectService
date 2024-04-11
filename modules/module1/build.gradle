@@ -37,5 +37,5 @@ dependencies {
     implementation 'com.google.android.material:material:1.8.0'
 
     implementation project(":base:lib_interface")
-    implementation project(":injectservice:injectservice_runtime")
+    implementation "com.github.aidaole.InjectService:injectservice_runtime:0.0.5"
 }
