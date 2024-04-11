@@ -29,9 +29,9 @@ publishing {
     }
     publications {
         maven(MavenPublication) {
-            group = 'com.aidaole.plugin'
+            group = 'com.github.aidaole'
             version = '1.0-SNAPSHOT'
-            artifactId = "injectservice"
+            artifactId = "injectservice_plugin"
 
             from components.java
         }
