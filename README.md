@@ -25,7 +25,34 @@ app
 
 ## 2. 使用方法
 
-### 2.1 编译发布插件
+### 2.1 依赖jitpack产物
+
+添加jitpack依赖
+
+```groovy
+maven { url 'https://jitpack.io' }
+```
+
+project的build.gralde中依赖插件版本
+
+```groovy
+buildscript {
+    dependencies {
+        classpath "com.github.aidaole:InjectService:0.0.4"
+    }
+}
+```
+
+app的build.gradle中应用插件
+
+```groovy
+plugins {
+    // ...
+    id 'com.aidaole.injectservice'
+}
+```
+
+### 2.2 或者自己编译发布插件
 
 首先到 [InjectService](https://github.com/aidaole/InjectService) clone下来代码 `sync` 项目通过
 
@@ -36,8 +63,6 @@ app
 然后在 `project` 的 `repo` 文件夹下可以找到插件
 
 ![](images/injectservice/publish_succ.png)
-
-### 2.2 引用插件
 
 #### 2.2.1 本地发布
 
@@ -65,33 +90,6 @@ buildscript {
 app 的 `build.gradle` 应用插件
 
 ```gradle
-plugins {
-    // ...
-    id 'com.aidaole.injectservice'
-}
-```
-
-#### 2.2.2 依赖jitpack版本
-
-添加jitpack依赖
-
-```groovy
-maven { url 'https://jitpack.io' }
-```
-
-project的build.gralde中依赖插件版本
-
-```groovy
-buildscript {
-    dependencies {
-        classpath "com.github.aidaole:InjectService:0.0.4"
-    }
-}
-```
-
-app的build.gradle中应用插件
-
-```groovy
 plugins {
     // ...
     id 'com.aidaole.injectservice'
