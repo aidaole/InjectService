@@ -38,7 +38,7 @@ project的build.gralde中依赖插件版本
 ```groovy
 buildscript {
     dependencies {
-        classpath "com.github.aidaole:InjectService:0.0.4"
+        classpath "com.github.aidaole:InjectService:0.0.5"
     }
 }
 ```
@@ -49,6 +49,14 @@ app的build.gradle中应用插件
 plugins {
     // ...
     id 'com.aidaole.injectservice'
+}
+```
+
+modules中同级模块依赖runtime
+
+```groovy
+dependencies {
+    implementation "com.github.aidaole.InjectService:injectservice_runtime:0.0.5"
 }
 ```
 
@@ -137,7 +145,7 @@ class WindowInterfaceImpl : WindowInterface {
 }
 ```
 
-`:module1`，`:module2` 不项目依赖，但是都要依赖底层接口和runtime
+`:module1`，`:module2` 无项目依赖，但是都要依赖底层接口和runtime
 
 ```gradle
 dependencies {
